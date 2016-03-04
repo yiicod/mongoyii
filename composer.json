@@ -38,8 +38,8 @@
       "./EMongoLogRoute.php",
       "./EMongoModel.php",
       "./EMongoSort.php",
-      "./EMongoDBRef",
-      "./EMongoQueryBuilder"
+      "./EMongoDBRef.php",
+      "./EMongoQueryBuilder.php"
     ]
   }
 }

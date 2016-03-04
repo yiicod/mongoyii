@@ -271,7 +271,7 @@ class EMongoCache extends CCache
      */
     protected function flushValues()
     {
-        $this->getCollection()->deleteMany();
+        $this->getCollection()->deleteMany([]);
         return true;
     }
 
