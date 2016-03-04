@@ -1,0 +1,45 @@
+{
+  "name": "yiicod/mongoyii",
+  "description": "A Yii MongoDB ORM",
+  "keywords": [
+    "mongodb",
+    "orm",
+    "yii"
+  ],
+  "type": "yii-extension",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Alexey Orlov",
+      "email": "aaorlov88@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Virchenko Maksimv",
+      "email": "muslim1992@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "mongodb/mongodb": "^1.0.0"
+  },
+  "autoload": {
+    "classmap": [
+      "./behaviors",
+      "./util",
+      "./validators",
+      "./EMongoClient.php",
+      "./EMongoCriteria.php",
+      "./EMongoDataProvider.php",
+      "./EMongoDocument.php",
+      "./EMongoException.php",
+      "./EMongoFile.php",
+      "./EMongoLogRoute.php",
+      "./EMongoModel.php",
+      "./EMongoSort.php",
+      "./EMongoDBRef",
+      "./EMongoQueryBuilder"
+    ]
+  }
+}
