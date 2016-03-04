@@ -1,6 +1,6 @@
 {
   "name": "yiicod/mongoyii",
-  "description": "A Yii MongoDB ORM",
+  "description": "A Yii MongoDB ORM for PHP 7",
   "keywords": [
     "mongodb",
     "orm",
