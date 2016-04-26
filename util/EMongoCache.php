@@ -223,9 +223,11 @@ class EMongoCache extends CCache
         $criteria = ['key' => (string) $key];
 
         $data = [
-            'key' => (string) $key,
-            'value' => (string) $value,
-            'expire' => (int) $expire,
+            '$set' => [
+                'key' => (string) $key,
+                'value' => (string) $value,
+                'expire' => (int) $expire,
+            ]
         ];
 
         $options = ['upsert' => true];

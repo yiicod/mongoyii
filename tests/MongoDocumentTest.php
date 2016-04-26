@@ -51,13 +51,13 @@ class MongoDocumentTest extends PHPUnit_Framework_TestCase
         }
 
         // Lets make sure those child docs actually went in
-        $skills = Skill::model()->find();
+        $skills = Skill::model()->findAll();
         $this->assertTrue(count($skills) > 0);
         $c = Interest::model()->count();
         $this->assertTrue($c > 0);
 
         // Let's build an array of the all the _ids of the child docs
-        $c = Interest::model()->find();
+        $c = Interest::model()->findAll();
        
         $interest_ids = [];
         foreach ($c as $row) {
@@ -175,7 +175,7 @@ class MongoDocumentTest extends PHPUnit_Framework_TestCase
         $r = $c->delete();        
         $this->assertTrue($r->getDeletedCount() == 1);
 
-        $r = User::model()->find();
+        $r = User::model()->findAll();
         $this->assertFalse(User::model()->count() > 0);
     }
 
@@ -282,7 +282,7 @@ class MongoDocumentTest extends PHPUnit_Framework_TestCase
         $r = User::model()->findOne(['username' => 'gdgdgd']);
         $this->assertInstanceOf('EMongoDocument', $r);
 
-        $r = User::model()->find(['username' => 'gdgdgd']);
+        $r = User::model()->findAll(['username' => 'gdgdgd']);
         $this->assertEquals(4, User::model()->count(['username' => 'gdgdgd']));
     }
 
@@ -357,7 +357,7 @@ class MongoDocumentTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(isset($p['username'], $p['_id']));
         $this->assertFalse(isset($p['addresses']));
 
-        $r2 = User::model()->find([], ['username' => 1]);
+        $r2 = User::model()->findAll([], ['username' => 1]);
         foreach ($r2 as $row) {
             $this->assertTrue($row->getIsPartial());
         }

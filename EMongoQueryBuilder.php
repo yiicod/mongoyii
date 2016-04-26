@@ -18,7 +18,14 @@ class EMongoQueryBuilder
      */
     public $model;
 
+    /**
+     * @var array|EMongoCriteria|MongoCursor|string
+     */
     private $query = '';
+
+    /**
+     * @var array
+     */
     private $options = [];
 
     /**

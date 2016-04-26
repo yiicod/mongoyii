@@ -931,7 +931,7 @@ class EMongoDocument extends EMongoModel
      * @param array|string[] $fields
      * @return []
      */
-    public function find($criteria = [], $fields = [])
+    protected function find($criteria = [], $fields = [])
     {
         $this->trace(__FUNCTION__);
 
@@ -996,7 +996,7 @@ class EMongoDocument extends EMongoModel
      * @param array|string[] $fields
      * @return EMongoDocument|null
      */
-    public function findBy_id($_id, $fields = [])
+    public function findByObjectID($_id, $fields = [])
     {
         $this->trace(__FUNCTION__);
         $_id = $this->getPrimaryKey($_id);
@@ -1012,7 +1012,7 @@ class EMongoDocument extends EMongoModel
     public function findByPk($pk, $fields = [])
     {
         $this->trace(__FUNCTION__);
-        return $this->findBy_id($pk, $fields);
+        return $this->findByObjectID($pk, $fields);
     }
 
     /**
